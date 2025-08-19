@@ -1,6 +1,9 @@
+from functools import wraps;
+
 def textcolor_red(fn):
    from colorama import init;
    from termcolor import colored;
+   @wraps(fn)
    def wrapper(text):
       init();
       return colored(f"{'*'*3}{fn(text)}{'*'*3}", 'red', attrs=['bold'])
@@ -10,5 +13,6 @@ def textcolor_red(fn):
 def sometext(text):
    return text;
 
-print(sometext("This should be red."))
+print(sometext("This should be red.")) #decorated.
+print(sometext.__wrapped__("This is not red. It is undecorated.")) #undecorated.
 
