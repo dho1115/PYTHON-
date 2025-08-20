@@ -29,6 +29,9 @@ class Store():
       return f"<Store inventory {self.inventory}>"
 
    def addItem(self, foods:list): # Method to add new food.
+      '''
+      Add Food type to self.inventory list.
+      '''
       try:
          for i in foods:
             if not isinstance(i, Food):
@@ -40,7 +43,11 @@ class Store():
          print(f"AN ERROR OCCURRED => {EXC}!!!!!")
          return f"EXCEPTION WARNING!!! {Exception}."
    
-   def __len__(self): # Without this, I cannot do len(Store Instance). len calls this function.
+   def __len__(self):
+      '''
+      len() calls this function UNDER THE HOOD (same as most other magic methods like sum(), which calls __add__).
+      Without this, I cannot do len(Store Instance). len calls this function.
+      '''
       return len(self.inventory) # It does not make sense, but I can add 23 to the return and len(Store Instance) would be the result of len(self.inventory) + 23.
 
 MyStore = Store(Food('Bologna', 'meat', 1.99), Food('sardines', 'other', 7.99), Food('lemonade', 'beverage', 5.99), Food('avocado', 'vegetable', 1.99), Food('water', 'beverage', 0.99));
