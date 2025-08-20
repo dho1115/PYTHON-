@@ -16,7 +16,7 @@ async def RunAsyncioSleep():
    return f"TASK 1: {Task1} - TASK 2: {Task2} - TASK 3: {Task3}."
 
 start = time();
-RunTask = asyncio.run(RunAsyncioSleep());
+TaskRunner = asyncio.run(RunAsyncioSleep());
 end = time();
 
-print(f"Finished running {RunTask}. Elapsed time is {round(end - start, 5)} seconds.")
+print(f"Finished running {TaskRunner}. Elapsed time is {round(end - start, 5)} seconds.")
