@@ -1,12 +1,17 @@
 import aiohttp;
 import asyncio;
+from requests.exceptions import HTTPError;
 
 url = 'https://jsonplaceholder.typicode.com/users';
 
 async def fetch(client, url=url):
    async with client.get(url) as response:
-      assert response.status == 200
-      return await response.text()
+      try:
+         if response.status != 200: raise HTTPError(f"HTTP status code error!!! {response.status}.")
+         return await response.json()
+      except HTTPError as http:
+         return f"{http}."
+      
    
 async def main():
    async with aiohttp.ClientSession() as client:
