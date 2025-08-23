@@ -21,11 +21,19 @@ def FileManager(filename, mode="r"): #automatically opens and closes file.
    print(f"About to close {filename}!!!");
    file.close(); #AUTMATICALLY closes file.
 
+def cleanFile(filename, goBack, replaceWith=""):
+   CleanFile = open(filename, 'w');
+   CleanFile.seek(goBack);
+   CleanFile.write(replaceWith);
+   CleanFile.close();
+
 with FileManager("./file.txt", "a+") as f:
-   # appendfile = f.write(" - just added this crap!!!") # uncomment this line to append.
+   cleanFile("./file.txt", 0)
+   AppendFile = f.write("Hello, world... how are you???")
    sleep(1.35);
-   f.seek(0);
-   readfile=f.read();
-   print(readfile)
+   AppendFile = f.write("...JUST ADDED THIS CRAP!!!")
+   f.seek(0)
+   ReadFile = f.read();
+   print(ReadFile)
 
 
