@@ -9,7 +9,7 @@ def API_Key():
 def link(ticker_symbol, API_Key=API_Key()):
    '''
    Returns the link.
-   arguments:
+   parameters:
    ticker_symbol: ticker.
    API_Key: User's API key.
    '''
@@ -23,30 +23,36 @@ def link(ticker_symbol, API_Key=API_Key()):
 async def all_data(link):
    '''
    Asynchronous function that accepts a link and then returns all of the data in json() format.
+   parameters:
+   link: link as string.
    '''
    import aiohttp;
    from requests.exceptions import HTTPError
    try:
       async with aiohttp.ClientSession() as client:
          result = await client.get(link)
+         if not result: raise Exception(f"Cannot get link!!! No such ticker!!!!!")
          return await result.json()
    except HTTPError as HTTP:
       print(f"HTTP error encountered!!!", HTTP);
    except RuntimeWarning as RTW:
       print("You may want to await this with an asyncio.run or something...", RTW)
+   except Exception as EXC:
+      print("SHIT!!! An exception occurred: ", EXC)
+
 
 def filteredData(all_data, link):
-   import asyncio;
    '''
-   Returns:
+   parameters:
+   all_data: the all_data function.
+   link: the link function (def link) with the ticker: link(ticker).
+
+   return:
    1. The symbol.
    2. The date the data was last refrreshed in yyyy-mm-dd format.
    3. The data where the key is yyyy-mm-dd and the value is the open, high, low, close and volume.
-
-   Arguments:
-   all_data: the all_data function.
-   link: the url from alpha vantage.
    '''
+   import asyncio
    try:
       results = asyncio.run(all_data(link));     
       MetaData = results.get('Meta Data');
@@ -61,7 +67,5 @@ def filteredData(all_data, link):
       print(EXC)
       return f"Exception in filteredData: {EXC}!!!"
 
-tickerSymbol = input("Enter Ticker Symbol: ");
 
-print(filteredData(all_data, link(tickerSymbol)))
 
