@@ -1,2 +1,2 @@
 def AddResult(*args):
-   return sum(*args)
+   return sum(args)
