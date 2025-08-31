@@ -82,8 +82,18 @@ def regularExpressionSearch(patternToSearch, tuple_string):
    group_date = date.group(0);
    return group_date
 
-def ShowChart(filteredData):
-   import matplotlib as mpl;
+def Chart(xAxisArray, yAxisArray, xLabel=None, yLabel=None):
+   import numpy as np;
+   import matplotlib.pyplot as mpp;
+
+   xValues = np.array(xAxisArray, dtype=object)
+   yValues = np.array(yAxisArray, dtype=object)
+   mpp.plot(xValues, yValues);
+   labelX = mpp.xlabel(xLabel) if xLabel else None;
+   labelY = mpp.ylabel(yLabel) if yLabel else None;
+   mpp.show()
+   mpp.close()
+   
 
 
 
