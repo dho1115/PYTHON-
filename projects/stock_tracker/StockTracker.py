@@ -10,13 +10,16 @@ if __name__ == "__main__":
    This is why I hide my api-key inside a dot-env (that and it's good practice).
    '''
    try:
-      from functions import all_data, filteredData, link, regularExpressionSearch
+      from functions import all_data, filteredData, link, Chart
 
       ticker = input("Enter a Ticker Symbol: ")
 
       filteredResult = (filteredData(all_data, link(ticker))['data'])
+      
+      closingDates = filteredResult.get('first5Dates');
+      closingValues = [float(x)*1 for x in filteredResult.get('first5ClosingValues')]; # The elements (values) inside filteredResult are STRINGED NUMBERS. You must convert them into ACTUAL NUMBERS or the resulting graph will look weeeeeerd... and remember to use your (approximately) 25 Alphvantage API calls wisely!!!!! Thank you for your cooperation.
 
-      print(filteredResult)     
+      print(Chart(closingDates, closingValues, f"{ticker} - CLOSING DATES", f"{ticker} - CLOSING PRICE"))     
 
    except Exception as EXC:
       print("EXCEPTION: ", EXC)
