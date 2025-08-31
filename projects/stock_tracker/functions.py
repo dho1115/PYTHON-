@@ -52,20 +52,38 @@ def filteredData(all_data, link):
    2. The date the data was last refrreshed in yyyy-mm-dd format.
    3. The data where the key is yyyy-mm-dd and the value is the open, high, low, close and volume.
    '''
+   '''
+   WARNING!!! API ONLY MAKES, LIKE 25 CALLS PER DAY OR SOME SHIT LIKE THAT. USE THE CALLS WISELY...
+
+   AND GO GET YOUR OWN DAMN API KEY!!! I NEED TO SAVE MY GOOFY-ASS CALLS.
+   '''
    import asyncio
    try:
       results = asyncio.run(all_data(link));     
       MetaData = results.get('Meta Data');
       Symbol = MetaData.get('2. Symbol');
       LastRefreshed = MetaData.get('3. Last Refreshed');
-      TimeSeriesDaily = results.get('Time Series (Daily)');
-      TimeSeriesDaily_list = list(TimeSeriesDaily.items());
-      data = [{f'{TimeSeriesDaily_list[0]}': TimeSeriesDaily_list[1]} for i in range(5)];
+      TimeSeriesDaily = results.get('Time Series (Daily)'); #{"2025-08-29": {...}, "2025-08-28": {...}, "2025-08-27": {...}}
+      closingDates = list(TimeSeriesDaily.keys());
+      closingValues = list(TimeSeriesDaily.values());
+      first5Dates = [closingDates[i] for i in range(5)];
+      first5Values = [closingValues[i] for i in range(5)];
+      first5ClosingValues = list(map(lambda x: x.get("4. close"), first5Values))
 
-      return dict(Symbol=Symbol, LastRefreshed=LastRefreshed, data=data);
+      return dict(Symbol=Symbol, LastRefreshed=LastRefreshed, data=dict(first5Dates=first5Dates, first5Values=first5Values, first5ClosingValues=first5ClosingValues));
    except Exception as EXC:
       print(EXC)
       return f"Exception in filteredData: {EXC}!!!"
+
+def regularExpressionSearch(patternToSearch, tuple_string):
+   global data;
+   import re;
+   date = re.search(patternToSearch, tuple_string);
+   group_date = date.group(0);
+   return group_date
+
+def ShowChart(filteredData):
+   import matplotlib as mpl;
 
 
 
