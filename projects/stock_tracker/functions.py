@@ -82,17 +82,29 @@ def regularExpressionSearch(patternToSearch, tuple_string):
    group_date = date.group(0);
    return group_date
 
-def Chart(xAxisArray, yAxisArray, xLabel=None, yLabel=None):
+def Chart(xAxisArray:list, yAxisArray:list, xLabel:str=None, yLabel:str=None):
+   '''
+   Using Numpy and Matplotlib, this function takes in values for x axis (xAxisArray) and y axis (yAxisArray) along with optional values for xLabel and yLabel and plots a chart using Matplotlib.
+
+   Parameters:
+   xAxisArray: A LIST[] of x values.
+   yAxisArray: A LIST[] OF y values.
+   xLabel: Text you want to display on X axis.
+   yLabel: Ditto for Y axis.
+   '''
    import numpy as np;
    import matplotlib.pyplot as mpp;
-
-   xValues = np.array(xAxisArray, dtype=object)
-   yValues = np.array(yAxisArray, dtype=object)
-   mpp.plot(xValues, yValues);
-   labelX = mpp.xlabel(xLabel) if xLabel else None;
-   labelY = mpp.ylabel(yLabel) if yLabel else None;
-   mpp.show()
-   mpp.close()
+   try:
+      xValues = np.array(xAxisArray, dtype=object)
+      yValues = np.array(yAxisArray, dtype=object)
+      mpp.plot(xValues, yValues);
+      labelX = mpp.xlabel(xLabel) if xLabel else None;
+      labelY = mpp.ylabel(yLabel) if yLabel else None;
+      mpp.show();
+   except Exception as EXC:
+      print("There seems to be an error inside Chart Function: ", EXC);
+   finally:
+      mpp.close(); #closes the chart no matter what.
    
 
 
