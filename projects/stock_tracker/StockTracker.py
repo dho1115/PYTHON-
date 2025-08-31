@@ -19,10 +19,10 @@ if __name__ == "__main__":
       closingDates = filteredResult.get('first5Dates');
       closingValues = [float(x)*1 for x in filteredResult.get('first5ClosingValues')]; # The elements (values) inside filteredResult are STRINGED NUMBERS. You must convert them into ACTUAL NUMBERS or the resulting graph will look weeeeeerd... and remember to use your (approximately) 25 Alphvantage API calls wisely!!!!! Thank you for your cooperation.
 
-      print(Chart(closingDates, closingValues, f"{ticker} - CLOSING DATES", f"{ticker} - CLOSING PRICE"))     
+      print(Chart(closingDates, closingValues, f"{ticker} - CLOSING DATES", f"{ticker} - CLOSING PRICE")) # See the resulting chart drawn by this function inside the comments part of this commit: d1b1f60 (https://github.com/dho1115/PYTHON-/commit/d1b1f603d9650356e7a09b484d45facdc8a9b82d).
 
    except Exception as EXC:
-      print("EXCEPTION: ", EXC)
+      print("EXCEPTION: ", EXC);
 
 
 
