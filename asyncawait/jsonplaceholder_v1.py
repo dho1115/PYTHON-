@@ -1,3 +1,8 @@
+'''
+NOTE: Wanna see something a little more cooler with APIs and async/await? Go to:
+the projects folder:
+projects > stock_tracker > StockTracker.py. By the time you see this comment, StockTracker.py may be renamed to main.py.
+'''
 import aiohttp;
 from aiohttp import ClientSession;
 import asyncio;
