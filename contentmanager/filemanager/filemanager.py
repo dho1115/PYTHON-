@@ -6,7 +6,7 @@ def FileManager(filename, mode="r"): #automatically opens and closes file.
    '''
    BASIC FILE MANAGER.
    Automatically opens and closes file.
-   NOTE: Yes... I know this already exists with the with open(file) as f, but... whatever.....
+   NOTE: Yes... I know this already exists with the with open(filename.txt) as f, but... whatever..... I am just doing this for practice.
    NOTE II: Notice how,you (technically, kind of ) cannot do this with a regular function that "returns" a file because file.close would have to go below the return, which it cannot do. I mean... unless you don't want to return a file.
 
    NOTE III: @contextmanager accepts a generator which calls next() "in the backend" for you. That is why, if you notice in the code below... I am not calling next().
