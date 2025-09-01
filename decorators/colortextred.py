@@ -1,6 +1,6 @@
 from functools import wraps;
 
-def textcolor_red(fn):
+def textcolor_red(fn): # This is the DECORATOR!!!
    from colorama import init;
    from termcolor import colored;
    @wraps(fn)
