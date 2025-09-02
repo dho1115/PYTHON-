@@ -15,3 +15,9 @@ KeyError: 'fsdfdsaa'
 ERROR:root:could not convert string to float: '"Hello"'
 ERROR:root:could not convert string to float: ' abc'
 ERROR:root:multiplication EXCEPTION!!! unsupported operand type(s) for *: 'float' and 'ValueError'.
+ERROR:root:Error in main program!!!
+Traceback (most recent call last):
+  File "C:\Users\Owner\Desktop\practice\Python\PYTHON\PYTHON-\logging\calculator\main.py", line 10, in main
+    return functions.__dict__.get(operation)(numbers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
