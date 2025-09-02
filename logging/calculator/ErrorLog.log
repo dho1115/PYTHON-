@@ -1,0 +1,17 @@
+ERROR:root:could not convert string to float: 'Hel'
+ERROR:root:could not convert string to float: 'world'
+ERROR:root:ADDITION ERROR!!! unsupported operand type(s) for +: 'float' and 'ValueError'.
+Traceback (most recent call last):
+  File "C:\Users\Owner\Desktop\practice\Python\PYTHON\PYTHON-\logging\calculator\functions.py", line 30, in addition
+    result = sum(numbers);
+             ^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'float' and 'ValueError'
+ERROR:root:Error in main program!!!
+Traceback (most recent call last):
+  File "C:\Users\Owner\Desktop\practice\Python\PYTHON\PYTHON-\logging\calculator\main.py", line 10, in main
+    return functions.__dict__[operation](numbers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'fsdfdsaa'
+ERROR:root:could not convert string to float: '"Hello"'
+ERROR:root:could not convert string to float: ' abc'
+ERROR:root:multiplication EXCEPTION!!! unsupported operand type(s) for *: 'float' and 'ValueError'.
