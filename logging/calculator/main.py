@@ -1,7 +1,7 @@
 if __name__ == "__main__":
    def main():
       import logging;
-      logging.basicConfig(level=logging.ERROR, filename='ErrorLog.log')
+      logging.basicConfig(level=logging.ERROR, filename='ErrorLog.log') # According to the logging hierarchy, only ERROR logs will be tracked.
       try:
          import functions;
          operation = input("What operation do you want to perform? ");
