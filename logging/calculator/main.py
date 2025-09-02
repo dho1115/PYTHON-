@@ -7,9 +7,9 @@ if __name__ == "__main__":
          operation = input("What operation do you want to perform? ");
          numbers = input("Enter some numbers separated by a comma: ").split(",");
 
-         return functions.__dict__[operation](numbers)
+         return functions.__dict__.get(operation)(numbers)
       except Exception as EXC:
          logging.error(msg="Error in main program!!!", exc_info=EXC);
          return f"Main function exception!!! - {EXC}."
    
-   main();
+   print(main())
