@@ -21,3 +21,27 @@ Traceback (most recent call last):
     return functions.__dict__.get(operation)(numbers)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: 'NoneType' object is not callable
+ERROR:root:could not convert string to float: 'hello'
+ERROR:root:could not convert string to float: 'True'
+ERROR:root:could not convert string to float: 'None'
+ERROR:root:could not convert string to float: "'Hello'\\n"
+ERROR:root:Error in main program!!!
+Traceback (most recent call last):
+  File "C:\Users\Owner\Desktop\practice\Python\PYTHON\PYTHON-\logging\calculator\functions.py", line 42, in subtraction
+    result = reduce(lambda accumulator, value: accumulator-value, numbers);
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Owner\Desktop\practice\Python\PYTHON\PYTHON-\logging\calculator\functions.py", line 42, in <lambda>
+    result = reduce(lambda accumulator, value: accumulator-value, numbers);
+                                               ~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for -: 'float' and 'ValueError'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Owner\Desktop\practice\Python\PYTHON\PYTHON-\logging\calculator\main.py", line 10, in main
+    return functions.__dict__.get(operation)(numbers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Owner\Desktop\practice\Python\PYTHON\PYTHON-\logging\calculator\functions.py", line 45, in subtraction
+    logging.error(f"FROM: {__name__}. ERROR: subtraction EXCEPTION!!! {dict(File=__name__, EXC=EXC)}.", exc_info={dict(file=__name__, exception=EXC)});
+                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
