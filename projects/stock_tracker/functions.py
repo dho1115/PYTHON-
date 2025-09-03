@@ -95,6 +95,7 @@ def Chart(xAxisArray:list, yAxisArray:list, xLabel:str=None, yLabel:str=None):
    import numpy as np;
    import matplotlib.pyplot as mpp;
    try:
+      xAxisArray.reverse() # reverse order of dates. Also, xAxisArray[::-1].
       xValues = np.array(xAxisArray, dtype=object)
       yValues = np.array(yAxisArray, dtype=object)
       mpp.plot(xValues, yValues);
