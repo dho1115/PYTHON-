@@ -30,7 +30,7 @@ def addition(*args):
       result = sum(numbers);
       return result;
    except Exception as EXC:
-      logging.error(msg=f"ADDITION ERROR!!! {EXC}.", exc_info=EXC);
+      logging.error(msg=f"FROM: {__name__}. ERROR: ADDITION ERROR!!! {dict(file=__name__, EXC=EXC)}.", exc_info=EXC);
       return f"addition EXCEPTION!!! {EXC}.";
 
 def subtraction(*args):
@@ -42,7 +42,7 @@ def subtraction(*args):
       result = reduce(lambda accumulator, value: accumulator-value, numbers);
       return result;
    except Exception as EXC:
-      logging.error(f"subtraction EXCEPTION!!! {EXC}.", exc_info=EXC);
+      logging.error(f"FROM: {__name__}. ERROR: subtraction EXCEPTION!!! {dict(File=__name__, EXC=EXC)}.", exc_info={dict(file=__name__, exception=EXC)});
       return f"subtraction EXCEPTION - {EXC}!!!"
    
 def multiplication(*args):
@@ -54,6 +54,6 @@ def multiplication(*args):
       result = reduce(lambda accumulator, value: accumulator*value, numbers);
       return result;
    except Exception as EXC:
-      logging.error(f"multiplication EXCEPTION!!! {EXC}.");
+      logging.error(f"From: {__name__} ERROR: multiplication EXCEPTION!!! {EXC}.");
       return f"multiplication EXCEPTION - {EXC}!!!"
       
