@@ -2,3 +2,17 @@
 2025-09-04 22:05:06.169 | INFO     | __main__:runLoggerInfo:10 - This is inside of a function!!!
 2025-09-04 22:20:11.533 | INFO     | __main__:<module>:7 - This is the loguru_demo!!!
 2025-09-04 22:20:11.539 | INFO     | __main__:runLoggerInfo:10 - This is inside of a function!!!
+2025-09-04T22:23:03.505712-0500 | INFO | message: This is the loguru_demo!!!
+2025-09-04T22:23:03.505712-0500 | INFO | message: This is inside of a function!!!
+2025-09-04T22:23:43.972869-0500 | INFO | message: This is the loguru_demo!!!
+2025-09-04T22:23:43.972869-0500 | INFO | message: This is inside of a function!!!
+LOG TIME: 2025-09-04T22:26:09.215856-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-04T22:26:09.218643-0500 | INFO | message: This is inside of a function!!! | extra information: {}
+LOG TIME: 2025-09-04T22:28:51.441755-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-04T22:28:51.441755-0500 | ERROR | message: *** ERROR!!! *** Something occurred. | extra information: {}
+LOG TIME: 2025-09-04T22:28:51.441755-0500 | INFO | message: This is inside of a function!!! | extra information: {}
+LOG TIME: 2025-09-04T22:32:38.452835-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-04T22:32:38.452835-0500 | INFO | message: This is inside of a function!!! | extra information: {}
+LOG TIME: 2025-09-04T22:33:06.974354-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-04T22:33:06.974992-0500 | INFO | message: This is inside of a function!!! | extra information: {}
+LOG TIME: 2025-09-04T22:33:06.974992-0500 | ERROR | message: ERROR!!! => not all arguments converted during string formatting - ('not all arguments converted during string formatting',) | extra information: {}
