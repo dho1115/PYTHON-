@@ -2,6 +2,8 @@
 
 from loguru import logger;
 
+logger.remove() # removes any defaults (by default, logger does not log traceback).
+logger.add('MyLogs.log')
 logger.info("This is the loguru_demo!!!") #Ran inside of the __main__ module, so it would show up as __main__:<module>: 5 (line 5).
 
 def runLoggerInfo(msg:str):
