@@ -1,2 +1,4 @@
 2025-09-04 22:05:06.168 | INFO     | __main__:<module>:7 - This is the loguru_demo!!!
 2025-09-04 22:05:06.169 | INFO     | __main__:runLoggerInfo:10 - This is inside of a function!!!
+2025-09-04 22:20:11.533 | INFO     | __main__:<module>:7 - This is the loguru_demo!!!
+2025-09-04 22:20:11.539 | INFO     | __main__:runLoggerInfo:10 - This is inside of a function!!!
