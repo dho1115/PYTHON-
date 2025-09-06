@@ -16,5 +16,8 @@ if __name__ == "__main__":
 
       print("Hello"%3) # Should raise an exception that will show up in MyLogs.log.
 
+      mylist = [1, 2, 3, "hello", "House"];
+      print(mylist[11]) # This error will not show in MyLogs.log till the Hello%3 is resolved.
+
    except Exception as EXC:
       logger.error(f"ERROR!!! => {EXC} - {EXC.args}");
