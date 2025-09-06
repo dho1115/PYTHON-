@@ -25,3 +25,15 @@ LOG TIME: 2025-09-05T20:53:22.676669-0500 | ERROR | message: ERROR!!! => list in
 LOG TIME: 2025-09-05T20:53:39.343519-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
 LOG TIME: 2025-09-05T20:53:39.343519-0500 | INFO | message: This is inside of a function!!! | extra information: {}
 LOG TIME: 2025-09-05T20:53:39.343519-0500 | ERROR | message: ERROR!!! => not all arguments converted during string formatting - ('not all arguments converted during string formatting',) | extra information: {}
+LOG TIME: 2025-09-05T23:25:40.137682-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-05T23:25:40.139706-0500 | INFO | message: This is inside of a function!!! | extra information: {}
+LOG TIME: 2025-09-05T23:25:40.139706-0500 | ERROR | message: ERROR!!! => not all arguments converted during string formatting - ('not all arguments converted during string formatting',) | extra information: {}
+LOG TIME: 2025-09-05T23:27:52.686842-0500 | INFO | message: This is the loguru_demo!!! | {}
+LOG TIME: 2025-09-05T23:27:52.687846-0500 | INFO | message: This is inside of a function!!! | {}
+LOG TIME: 2025-09-05T23:27:52.687846-0500 | ERROR | message: ERROR!!! => not all arguments converted during string formatting - ('not all arguments converted during string formatting',) | {}
+LOG TIME: 2025-09-05T23:28:24.213076-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-05T23:28:24.213076-0500 | INFO | message: This is inside of a function!!! | extra information: {}
+LOG TIME: 2025-09-05T23:30:16.075139-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-05T23:30:16.076149-0500 | INFO | message: PERSONNEL PROFILE: | extra information: {'_id': 'js12345', 'name': 'Jamie Smith', 'role': 'asst. manager'}
+LOG TIME: 2025-09-05T23:30:16.076149-0500 | INFO | message: This is inside of a function!!! | extra information: {}
+LOG TIME: 2025-09-05T23:30:16.076149-0500 | ERROR | message: ERROR!!! => not all arguments converted during string formatting - ('not all arguments converted during string formatting',) | extra information: {}
