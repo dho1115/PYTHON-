@@ -13,7 +13,7 @@ def post_post_delete_data():
    sql_connection = sqlite3.connect("products.db"); # establish a connection.
    cursor = sql_connection.cursor();
    yield cursor; #returns the cursor to POST, PUT or DELETE data.
-   print("Successfully executed sql function!!!")
+   print("\n\n\nSuccessfully executed and closed sql context manager!!!")
    sql_connection.commit(); # commits the data to sqlite3 after writing.
    sql_connection.close(); # closes the database connection to prevent side-effects, memory loss, etc....
 
