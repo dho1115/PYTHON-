@@ -37,3 +37,14 @@ LOG TIME: 2025-09-05T23:30:16.075139-0500 | INFO | message: This is the loguru_d
 LOG TIME: 2025-09-05T23:30:16.076149-0500 | INFO | message: PERSONNEL PROFILE: | extra information: {'_id': 'js12345', 'name': 'Jamie Smith', 'role': 'asst. manager'}
 LOG TIME: 2025-09-05T23:30:16.076149-0500 | INFO | message: This is inside of a function!!! | extra information: {}
 LOG TIME: 2025-09-05T23:30:16.076149-0500 | ERROR | message: ERROR!!! => not all arguments converted during string formatting - ('not all arguments converted during string formatting',) | extra information: {}
+LOG TIME: 2025-09-08T09:55:26.542446-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-08T09:55:26.543445-0500 | INFO | message: PERSONNEL PROFILE: | extra information: {'_id': 'js12345', 'name': 'Jamie Smith', 'role': 'asst. manager'}
+LOG TIME: 2025-09-08T09:55:26.543445-0500 | INFO | message: This is inside of a function!!! | extra information: {}
+LOG TIME: 2025-09-08T09:55:26.543445-0500 | ERROR | message: ERROR!!! => not all arguments converted during string formatting - ('not all arguments converted during string formatting',) | extra information: {}
+LOG TIME: 2025-09-08T09:56:20.693391-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-08T09:56:20.694391-0500 | INFO | message: PERSONNEL PROFILE: | extra information: {'_id': 'js12345', 'name': 'Jamie Smith', 'role': 'asst. manager'}
+LOG TIME: 2025-09-08T09:56:20.694391-0500 | INFO | message: This is inside of a function!!! | extra information: {}
+LOG TIME: 2025-09-08T09:56:20.694391-0500 | ERROR | message: ERROR!!! => not all arguments converted during string formatting - ('not all arguments converted during string formatting',) | extra information: {}
+LOG TIME: 2025-09-08T09:56:56.761086-0500 | INFO | message: This is the loguru_demo!!! | extra information: {}
+LOG TIME: 2025-09-08T09:56:56.761086-0500 | INFO | message: PERSONNEL PROFILE: | extra information: {'_id': 'js12345', 'name': 'Jamie Smith', 'role': 'asst. manager'}
+LOG TIME: 2025-09-08T09:56:56.761086-0500 | INFO | message: This is inside of a function!!! | extra information: {}

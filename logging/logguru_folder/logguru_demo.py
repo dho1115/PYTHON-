@@ -4,7 +4,7 @@ from loguru import logger;
 
 if __name__ == "__main__":
    try:
-      logger.remove() # removes any defaults (by default, logger does not log traceback).
+      logger.remove(0) # removes any defaults (by default, logger does not log traceback).
       logger.add('MyLogs.log', level="TRACE", format="LOG TIME: {time} | {level} | message: {message} | extra information: {extra}") # level = TRACE is lowest level.
 
       logger.info("This is the loguru_demo!!!") #Ran inside of the __main__ module, so it would show up as __main__:<module>: 5 (line 5).
@@ -20,10 +20,10 @@ if __name__ == "__main__":
 
       runLoggerInfo("This is inside of a function!!!")
 
-      print("Hello"%3) # Should raise an exception that will show up in MyLogs.log.
+      # print("Hello"%3) # Uncomment this line to see the exception that will show up in MyLogs.log.
 
       mylist = [1, 2, 3, "hello", "House"];
-      print(mylist[11]) # This error will not show in MyLogs.log till the Hello%3 is resolved.
+      print(mylist[1]) # This error will not show in MyLogs.log till the Hello%3 is resolved.
 
    except Exception as EXC:
       logger.error(f"ERROR!!! => {EXC} - {EXC.args}");
