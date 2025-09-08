@@ -23,8 +23,22 @@ if __name__ == "__main__":
 
       # db.executemany("INSERT INTO products (name, price, quantity) VALUES (?, ?, ?)", listofproducts); #Will comment this out b/c I do not want to insert the same products again.
 
-      db.execute("SELECT * FROM products");
+      db.execute(
+         '''
+         SELECT 
+         name, 
+         price, 
+         quantity,
+         CASE
+            WHEN quantity < 1 THEN 'OUT OF STOCK.'
+            WHEN quantity < 15 THEN 'LOW.'
+            ELSE 'IN STOCK.'
+         END as STATUS
+         FROM products;
+         '''
+      );
 
       result = db.fetchall();
 
-      print("result:", result);
+      for i in result:
+         print(f"name: {i[0]}\nprice: {i[1]}\nquantity: {i[2]}\nstatus: {i[3]}\n=========\n");
