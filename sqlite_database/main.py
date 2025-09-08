@@ -13,15 +13,15 @@ if __name__ == "__main__":
          '''
       );
 
-      listofproducts = [
-         ('chocolate sprinkles bar', '1.15', 35),
-         ('watermelon chunks', '7.35', 19),
-         ('healthy almonds', '3.99', 7),
-         ('iced tea bottles (black)', '3.99', 57),
-         ('raisin boxes', '0.99', 0)
-      ];
+      # listofproducts = [
+      #    ('chocolate sprinkles bar', '1.15', 35),
+      #    ('watermelon chunks', '7.35', 19),
+      #    ('healthy almonds', '3.99', 7),
+      #    ('iced tea bottles (black)', '3.99', 57),
+      #    ('raisin boxes', '0.99', 0)
+      # ];
 
-      db.executemany("INSERT INTO products (name, price, quantity) VALUES (?, ?, ?)", listofproducts);
+      # db.executemany("INSERT INTO products (name, price, quantity) VALUES (?, ?, ?)", listofproducts); #Will comment this out b/c I do not want to insert the same products again.
 
       db.execute("SELECT * FROM products");
 
