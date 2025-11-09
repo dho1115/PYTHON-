@@ -4,7 +4,7 @@ from random import randint;
 from contextlib import contextmanager;
 
 game_over = False;
-correctNumber = randint(1, 10);
+correctNumber = randint(1, 50);
 
 def contestant_model(name, correctNumber):
    '''
@@ -15,10 +15,10 @@ def contestant_model(name, correctNumber):
    '''
    global game_over;
 
-   guess = randint(1, 10);
+   guess = randint(1, 50);
 
    while not game_over:
-      guess = randint(1, 10);
+      guess = randint(1, 50);
       game_over = (guess == correctNumber);
       sleep(1.5)
       print(f"{name}'s guess is {guess}... correct number is {correctNumber}\n");
