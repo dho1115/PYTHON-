@@ -2,27 +2,33 @@ if __name__ == "__main__":
    from restaurantmenu import currentselection;
 
    class Order:
-      def __init__(self, name, price, quantity):
-         self.name = name;
-         self.price = price;
+      items_ordered = [];
+
+      def __init__(self, quantity, price, taxAdded=False) -> None:
          self.quantity = quantity;
-
-      def __repr__(self):
-         return str(dict(name = self.name, price=self.price, quantity=self.quantity));
+         self.taxAdded = taxAdded
+         self.price = price;
+         self.total = price;
       
-      def __add__(self, other):
-         selfTotal = self.price*self.quantity;
-         otherTotal = other.price*other.quantity;
-         tip = 0.1*(selfTotal + otherTotal);
-         tax = 0.115 * (selfTotal + otherTotal + tip);
+      def __add__(self, other_value):
+         tax_item_1 = 0.1 *(self.quantity * self.price); # tax
+         tax_item_2 = 0.1 *(other_value.quantity * other_value.price); # tax
 
-         return dict(
-            cart=[dict(name=self.name, price=self.price, quantity=self.quantity, total=selfTotal), dict(name=other.name, price=other.price, quantity=other.quantity, total=otherTotal), dict(subtotal=selfTotal + otherTotal, tip=tip, tax=round(tax, 2), total=round(selfTotal + otherTotal + tip + tax, 2))]
-         )
+         item_1_total = round((self.quantity * self.total) + tax_item_1, 3) if self.taxAdded == False else round((self.quantity * self.total), 3); # I do not want to add tax again when I do addition with multiple numbers.
+
+         item_2_total = round((other_value.quantity * other_value.price) + tax_item_2, 3) if other_value.taxAdded == False else round((other_value.quantity + other_value.price), 3);
+
+         self.total+= (item_1_total + item_2_total); # grand total with tax
+
+         print(dict(item_1_total=item_1_total, item_2_total=item_2_total, totalSoFar = item_1_total + item_2_total))
+
+         return Order(1, (item_1_total + item_2_total), True) # if you return a number instead of type Order, then you cannot to addition with multiple items.
+
+   food1 = Order(3, currentselection[0]["price"]);
+   food2 = Order(5, currentselection[1]["price"]);
+   food3 = Order(4, currentselection[5]["price"]);
+
+   grand_total = food1 + food2 + food3 + food1 + food2; # I cannot multiple more than 2 food items if I returned, say, an integer instead of Order (see __add__ in Order method).
    
-   order1 = Order(**currentselection[4], quantity=3);
-   order2 = Order(**currentselection[3], quantity=5);
-
-   total = order1 + order2
-
-   print(total)
+   print(grand_total)
+   print(grand_total.total)
