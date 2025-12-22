@@ -31,7 +31,7 @@ def contestant_model(name, correctNumber):
       return f"LOSER!!!!!"
 
 @contextmanager
-def contest(contestant_props, correctNumber):
+def contest(contestant_props:list, correctNumber:int):
    '''
    This function declaration (context manager) handles not only taking in the contestant props and turning those props into a Thread, but it also STARTS the thread (something I keep forgetting to do and then I wonder why the thread is not... STARTING!!!).
 
